@@ -1,4 +1,4 @@
-# 💿 MoodMeme 3D: Hyper-Vault v5.0
+# 💿 MoodMeme 3D: Hyper-Vault v2.0
 
 **MoodMeme 3D** is a high-performance, browser-based interactive 3D environment built for exploring digital memes. Transforming a traditional soundboard into a futuristic **Cyber-Archive**, it utilizes Three.js for WebGL rendering and a custom cursor-driven interaction model.
 
