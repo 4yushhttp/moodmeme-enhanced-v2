@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodMeme // 3D Hyper-Archive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ui-layer">
+        <header>
+            <div class="sys-info">STATUS: <span class="pulse">DECRYPTING...</span></div>
+            <h1 class="logo">MOODMEME <span class="v-tag">v2.0</span></h1>
+        </header>
+
+        <div id="start-screen">
+            <div class="decryption-box">
+                <p class="mono">> LOCATING_LOCAL_ASSETS...</p>
+                <p class="mono">> INITIALIZING_3D_CORE...</p>
+                <button id="enter-btn">MOUNT DRIVE</button>
+            </div>
+        </div>
+
+        <div id="hud-info">
+            <div class="frame-data">
+                <label>ACTIVE_OBJECT</label>
+                <div id="active-meme-name">SCANNING_VAULT</div>
+            </div>
+            <div class="controls-hint">
+                [LMB] ROTATE_VAULT // [SCRL] ZOOM // [CLK] TRIGGER_AUDIO
+            </div>
+        </div>
+
+        <!-- Inside <div id="ui-layer"> -->
+        <div class="side-nav left" id="nav-left">
+            <div class="pattern"></div>
+            <div class="label">ROTATE_L</div>
+        </div>
+
+        <div class="side-nav right" id="nav-right">
+            <div class="pattern"></div>
+            <div class="label">ROTATE_R</div>
+        </div>
+    </div>
+
+    <!-- Hidden Gallery: Edit your assets here -->
+    <div class="meme-gallery" style="display: none;">
+        <img src="assets/images/meme1.jpg" alt="SYSTEM_FAH" data-sound="assets/audio/fahhhh.mp3">
+        <img src="assets/images/meme2.gif" alt="VOID_SIGNAL" data-sound="assets/audio/nggaaa.mp3">
+        <img src="assets/images/meme3.jpg" alt="BRO_PROTOCOL" data-sound="assets/audio/omgbro.mp3">
+        <img src="assets/images/meme4.jpg" alt="CORE_AUG" data-sound="assets/audio/aaaughh.mp3">
+        <img src="assets/images/meme5.gif" alt="EJECT_SEQ" data-sound="assets/audio/getout.mp3">
+        <img src="assets/images/meme6.png" alt="EJECT_SEQ_B" data-sound="assets/audio/getout.mp3">
+        <img src="assets/images/meme7.jpg" alt="MOD_G_DRIVE" data-sound="assets/audio/modig.mp3">
+        <img src="assets/images/meme8.jpg" alt="KAI_INTERLINK" data-sound="assets/audio/yungkai.mp3">
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Space+Mono&display=swap');
+
+:root {
+    --neon-cyan: #00f3ff;
+    --neon-pink: #ff00ff;
+    --glass: rgba(0, 243, 255, 0.05);
+}
+
+body, html {
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    background: #020205;
+    color: var(--neon-cyan);
+    font-family: 'Space Mono', monospace;
+    overflow: hidden;
+}
+
+#ui-layer {
+    position: absolute; width: 100%; height: 100%;
+    z-index: 10; pointer-events: none;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 30px; box-sizing: border-box;
+}
+
+/* SIDE NAVIGATION STRIPS */
+.side-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 70vh;
+    pointer-events: auto; /* Enable interaction */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    z-index: 20;
+    opacity: 0.5;
+}
+
+.side-nav.left { left: 0; border-right: 1px solid rgba(0, 243, 255, 0.2); }
+.side-nav.right { right: 0; border-left: 1px solid rgba(0, 243, 255, 0.2); }
+
+.side-nav:hover {
+    opacity: 1;
+    background: rgba(0, 243, 255, 0.05);
+}
+
+.side-nav .label {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    margin: 10px 0;
+    color: var(--neon-cyan);
+}
+
+/* The "Side-Side Pattern" (Chevrons) */
+.side-nav .pattern {
+    width: 20px;
+    height: 100%;
+    background-image: radial-gradient(var(--neon-cyan) 1px, transparent 0);
+    background-size: 10px 10px;
+    position: relative;
+    mask-image: linear-gradient(to bottom, transparent, black, transparent);
+}
+
+/* Visual pulse on hover */
+.side-nav:hover .pattern {
+    animation: pattern-shift 1s infinite linear;
+}
+
+@keyframes pattern-shift {
+    from { background-position: 0 0; }
+    to { background-position: 0 20px; }
+}
+
+header { display: flex; justify-content: space-between; align-items: flex-start; }
+.logo { font-family: 'Orbitron'; letter-spacing: 5px; margin: 0; font-weight: 900; }
+.v-tag { font-size: 0.8rem; color: var(--neon-pink); vertical-align: super; }
+
+.sys-info { font-size: 0.7rem; border: 1px solid var(--neon-cyan); padding: 5px 10px; }
+.pulse { animation: pulse-blink 1s infinite; }
+
+@keyframes pulse-blink { 50% { opacity: 0.2; } }
+
+#start-screen {
+    pointer-events: auto; align-self: center;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 40px; border: 1px solid var(--neon-pink);
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
+    text-align: center;
+}
+
+button {
+    background: var(--neon-cyan); color: #000;
+    border: none; padding: 15px 35px;
+    font-family: 'Orbitron'; font-weight: bold;
+    cursor: pointer; margin-top: 20px; transition: 0.3s;
+}
+
+button:hover { background: #fff; box-shadow: 0 0 20px #fff; }
+
+#hud-info { display: flex; justify-content: space-between; align-items: flex-end; }
+.frame-data { border-left: 4px solid var(--neon-pink); padding-left: 15px; }
+.frame-data label { font-size: 0.6rem; color: var(--neon-pink); display: block; }
+#active-meme-name { font-family: 'Orbitron'; font-size: 1.8rem; }
+.controls-hint { font-size: 0.7rem; color: #555; }
+
+#canvas-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
